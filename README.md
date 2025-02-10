@@ -63,13 +63,18 @@ with the sensor and this (or other) library.
 - **ERCFS(uint8_t select, uint8_t dataIn, uint8_t dataOut, uint8_t clock)** SOFTWARE SPI
 - **bool begin()** initializes the communication.
 
+
 ### Read
 
 - **uint16_t getRawValue()** returns a value from 0..16383
-- **float getAngle()** returns an angle from 0..360.0°
-- **void setOffset(float offset = 0)** set an offset for the angle.
-- **float getOffset()** returns the current offset.
-- **uint32_t lastRead()** timestamp in milliseconds since start.
+- **float getAngle()** returns an absolute angle from 0..360.0°, optional
+with offset correction.
+- **void setOffset(float offset = 0)** set an offset in degrees for the angle.
+- **float getOffset()** returns the current offset in degrees.
+- **uint32_t lastRead()** timestamp in microseconds since start.
+Note this wraps every ~70 minutes however for RPM measurements one
+need to read the device far more often.
+
 
 ### Debugging
 

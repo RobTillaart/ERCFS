@@ -61,14 +61,17 @@ bool ERCFS::begin()
 uint16_t ERCFS::getRawValue()
 {
   uint16_t raw = readDevice();
-  _lastRead = millis();
+  _lastRead = micros();
   return raw;
 }
 
 float ERCFS::getAngle()
 {
   float angle = (360.0 / 16384) * getRawValue();
-  if (_offset != 0) angle = angle + _offset;
+  if (_offset != 0) 
+  {
+    angle = fmod(angle + _offset, 360.0);
+  }
   return angle;
 }
 
@@ -82,7 +85,7 @@ float ERCFS::getOffset()
   return _offset;
 }
 
-uint32_t ERCFS::lastRead()  //  time in millis
+uint32_t ERCFS::lastRead()  //  time in micros
 {
   return _lastRead;
 }
@@ -117,13 +120,13 @@ uint16_t ERCFS::readDevice()
     {
       digitalWrite(dao, HIGH);  //  send 0xFFFF
       digitalWrite(clk, HIGH);
+      digitalWrite(clk, LOW);
       raw <<= 1;
       raw += digitalRead(dai);
-      digitalWrite(clk, LOW);
     }
   }
   digitalWrite(_select, HIGH);
-  return raw & 0x3FFF;
+  return raw & 0x3FFF;  //  only lowest 14 bits.
 }
 
 
