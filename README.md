@@ -41,7 +41,7 @@ See - https://forum.arduino.cc/t/will-this-rotary-encoder-work-with-arduino/1351
 |:------------|:-------|:----------:|:----------:|
 |  Supply +V  |   Red  |     1      |     1      |
 |  Ground     |  Grey  |     2      |     2      |
-|  MOSI       |  Grey  |     3      |     3      |
+|  MOSI       |  Grey  |     NC     |     3      |
 |  MISO       |  Grey  |     3      |     4      |
 |  CLOCK      |  Grey  |     4      |     5      |
 |  SELECT CS  |  Grey  |     5      |     6      |
