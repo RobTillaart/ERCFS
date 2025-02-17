@@ -97,6 +97,7 @@ void ERCFS::setSPIspeed(uint32_t speed)
   _SPIspeed = speed;
   //  don't know if there is a MAX speed?
   //  if (_SPIspeed > 2000000) _SPIspeed = 2000000;
+  _spi_settings = SPISettings(_SPIspeed, MSBFIRST, SPI_MODE1);
 }
 
 uint32_t ERCFS::getSPIspeed()

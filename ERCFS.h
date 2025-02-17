@@ -67,7 +67,7 @@ private:
 
   //  SPI
   bool     _hwSPI;
-  uint32_t _SPIspeed = 16000000;
+  uint32_t _SPIspeed = 1000000;
 
   uint16_t readDevice();
 
