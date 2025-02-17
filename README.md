@@ -101,9 +101,11 @@ Note this wraps every ~70 minutes however for RPM measurements one
 need to read the device far more often.
 
 
-### Debugging
+### SPI
 
-- **bool usesHWSPI()**
+- **void setSPIspeed(uint32_t speed)** idem, clipped to max 2 MHz.
+- **uint32_t getSPIspeed()** idem.
+- **bool usesHWSPI()** idem.
 
 
 ## Future
