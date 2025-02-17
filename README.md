@@ -49,13 +49,19 @@ See - https://forum.arduino.cc/t/will-this-rotary-encoder-work-with-arduino/1351
 
 ### Related
 
+Angle math
+
 - https://github.com/RobTillaart/Angle
 - https://github.com/RobTillaart/AngleConvertor
 - https://github.com/RobTillaart/AverageAngle
 - https://github.com/RobTillaart/runningAngle
+
+Decoders
+
+- https://github.com/RobTillaart/AMT25
 - https://github.com/RobTillaart/AS5600 magnetic rotation meter.
 - https://github.com/RobTillaart/ERCFS this library
-- https://p3america.com/ercf-1-05spi-360-z/ home of datasheet.
+- https://p3america.com/ercf-1-05spi-360-z/ home of ERCFS datasheet.
 
 
 ### Compatibles
